@@ -1,0 +1,24 @@
+apply plugin: 'java'
+apply plugin: 'application'
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+mainClassName = "org.ehcache.sample.BasicProgrammatic"
+
+applicationName = 'mainApp'
+
+applicationDefaultJvmArgs = ["-Xms512m", "-Xmx1024m", "-Dlog4j.configurationFile=log4j.xml" ]
+
+
+dependencies {
+    compile 'org.slf4j:slf4j-api:1.7.25'
+    compile group: 'org.apache.logging.log4j', name: 'log4j-slf4j-impl', version: '2.11.1'
+
+    //testCompile 'junit:junit:4.12'
+    //<ehcache3.version>3.6.1</ehcache3.version>
+    compile group: 'org.ehcache', name: 'ehcache', version: '3.6.1'
+
+}
